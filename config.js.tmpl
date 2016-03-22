@@ -1,0 +1,40 @@
+module.exports = {
+    webSocket: {
+        "port": 3000
+    },
+    rabbitConn: {
+        "host": "192.168.1.101",
+        "port": "5672",
+        "login": "LOGIN",
+        "password": "PASS",
+        "authMechanism": "AMQPLAIN",
+        "vhost": "/",
+        "noDelay": true,
+        "connectionTimeout": 1000,
+        "ssl": {
+            "enabled": false
+        }
+    },
+    email: {
+        options: {
+            from: '' // sender address
+            // bcc: '',
+        },
+        transport: {
+            host: 'smtp.yandex.ru',
+            secure: true, // defines if the connection should use SSL (if true) or not (if false)
+            ignoreTLS: true, // turns off STARTTLS support if true
+            port: 465, // port for secure SMTP
+            auth: {
+                user: "login",
+                pass: "pass"
+            }
+            //tls: {
+            //    ciphers:'SSLv3'
+            //}
+        }
+    },
+    sms: {
+        "url": "http://sms.ru/sms/send?api_id={ID}"
+    }
+};
